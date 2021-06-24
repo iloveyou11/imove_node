@@ -1,0 +1,13 @@
+.cache
+package.json
+package-lock.json
+public
+
+**/*.md
+**/*.svg
+**/*.ejs
+**/*.html
+
+example/.umi
+example/.umi-production
+example/.umi-test

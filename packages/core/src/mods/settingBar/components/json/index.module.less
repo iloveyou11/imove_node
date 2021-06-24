@@ -1,0 +1,39 @@
+.container {
+  margin-top: 20px;
+
+  .header{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+    .titleText {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.editModal {
+  .tabPane{
+    .form{
+      height:600px;
+      overflow-y: auto;
+      margin:0 20px;
+
+      :global {
+        .fr-wrapper {
+          position: relative;
+        }
+      }
+    }
+    .configInput{
+      height: 600px;
+    }
+  }
+
+  :global {
+    .ant-modal-body {
+      padding: 0;
+    }
+  }
+}

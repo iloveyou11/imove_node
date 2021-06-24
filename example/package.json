@@ -1,0 +1,19 @@
+{
+  "name": "example",
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp"
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "@imove/core": "^0.3.9",
+    "@umijs/preset-react": "1.x",
+    "lowdb": "^1.0.0",
+    "umi": "^3.3.7"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0"
+  }
+}
