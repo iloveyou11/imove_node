@@ -121,7 +121,7 @@ const schema = {
     },
     code: 'export default async function(ctx) {\n  return true;\n}',
     inputMode: 'default',
-    outputMode: 'nopack'
+    outputMode: 'nopack',
   },
 };
 

@@ -11,6 +11,7 @@ import ImportNodes from './ImportNodes';
 import ConnectStatus, { Status } from './connectStatus';
 import Configuration from './configuration';
 import { localConnect } from '../../api';
+import createNode from '../flowChart/createNode';
 
 interface IProps {
   flowChart: Graph;
@@ -45,6 +46,39 @@ const Header: React.FC<IProps> = (props: IProps) => {
           title: '本地连接成功，是否将数据同步至当前项目？',
           onOk() {
             try {
+              // 先注册节点，否则会同步失败
+              const extendCell: any = {};
+              dsl.cells.forEach((item: any) => {
+                if (
+                  item.shape !== 'imove-start' &&
+                  item.shape !== 'imove-branch' &&
+                  item.shape !== 'edge'
+                ) {
+                  const {
+                    serviceId,
+                    label,
+                    domain,
+                    funcName,
+                    provider,
+                    providerType,
+                  } = item.data;
+                  extendCell[item.shape] = createNode(
+                    serviceId,
+                    label,
+                    domain,
+                    funcName,
+                    provider,
+                    providerType,
+                  );
+                }
+              });
+              const nodes = Object.values(extendCell);
+              if (nodes.length > 0) {
+                nodes.forEach((schema: any) => {
+                  const { base, ...rest } = schema;
+                  base.define(rest);
+                });
+              }
               flowChart.fromJSON(dsl);
             } catch (error) {
               message.error('同步失败！');

@@ -12,7 +12,7 @@
       "shape": "imove-behavior",
       "data": {
         "label": "处理",
-        "configSchema": "{\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"textarea_FyaArd\": {\n        \"title\": \"Textarea\",\n        \"type\": \"string\",\n        \"format\": \"textarea\",\n        \"description\": \"文本编辑框\"\n      },\n      \"select_jrGW8n\": {\n        \"title\": \"Select\",\n        \"type\": \"string\",\n        \"enum\": [\n          \"a\",\n          \"b\",\n          \"c\"\n        ],\n        \"enumNames\": [\n          \"早\",\n          \"中\",\n          \"晚\"\n        ],\n        \"description\": \"下拉单选\"\n      }\n    },\n    \"ui:displayType\": \"row\",\n    \"ui:showDescIcon\": true\n  },\n  \"displayType\": \"row\",\n  \"showDescIcon\": true\n}",
+        "configSchema": "",
         "configData": {},
         "dependencies": "{\n  \n}",
         "code": "export default async function(ctx) {\n  console.log('1212')\n}"
@@ -102,7 +102,7 @@
       "shape": "imove-start",
       "data": {
         "label": "开始",
-        "configSchema": "{\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"input_1aWdPV\": {\n        \"title\": \"Input\",\n        \"type\": \"string\",\n        \"description\": \"输入框\"\n      },\n      \"dateRangeSelect_mPNhq_\": {\n        \"title\": \"DateRange\",\n        \"type\": \"range\",\n        \"format\": \"date\",\n        \"description\": \"日期范围选择\"\n      }\n    },\n    \"ui:displayType\": \"row\",\n    \"ui:showDescIcon\": true\n  },\n  \"displayType\": \"row\",\n  \"showDescIcon\": true\n}",
+        "configSchema": "",
         "configData": {},
         "trigger": "start",
         "dependencies": "{\n  \n}",
@@ -193,7 +193,7 @@
       "shape": "imove-branch",
       "data": {
         "label": "判断",
-        "configSchema": "{\"schema\":{\"type\":\"object\",\"properties\":{\"input_MudoMs\":{\"title\":\"Input\",\"type\":\"string\",\"description\":\"输入框\"}},\"ui:displayType\":\"row\",\"ui:showDescIcon\":true},\"displayType\":\"row\",\"showDescIcon\":true}",
+        "configSchema": "",
         "configData": {},
         "dependencies": "{\n  \n}",
         "ports": {
@@ -344,7 +344,7 @@
       "shape": "imove-behavior",
       "data": {
         "label": "处理",
-        "configSchema": "{\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"textarea_rdO5RK\": {\n        \"title\": \"Textarea\",\n        \"type\": \"string\",\n        \"format\": \"textarea\",\n        \"description\": \"文本编辑框\"\n      }\n    },\n    \"ui:displayType\": \"row\",\n    \"ui:showDescIcon\": true\n  },\n  \"displayType\": \"row\",\n  \"showDescIcon\": true\n}",
+        "configSchema": "",
         "configData": {},
         "dependencies": "{\n  \n}",
         "code": "export default async function(ctx) {\n  console.log('test')\n}"
@@ -461,7 +461,7 @@
       "shape": "imove-behavior",
       "data": {
         "label": "在线运行测试",
-        "configSchema": "{\n  \"schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"input_CCw1sQ\": {\n        \"title\": \"Input\",\n        \"type\": \"string\",\n        \"description\": \"输入框\"\n      },\n      \"allBoolean_fREQq-\": {\n        \"title\": \"Switch\",\n        \"type\": \"boolean\",\n        \"ui:widget\": \"switch\",\n        \"description\": \"开关控制\"\n      }\n    },\n    \"ui:displayType\": \"row\",\n    \"ui:showDescIcon\": true\n  },\n  \"displayType\": \"row\",\n  \"showDescIcon\": true\n}",
+        "configSchema": "",
         "configData": {},
         "dependencies": "{\n  \"lodash.get\": \"4.4.2\"\n}",
         "code": "import fpget from 'lodash.get';\n\nexport default async function(ctx) {\n  const obj = {a: {b: 'hello imove~'}};\n  console.log(fpget(obj, 'a.b'));\n  return ctx.getPipe();\n}"

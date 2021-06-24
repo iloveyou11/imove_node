@@ -25,9 +25,10 @@ interface IBasicData {
 
 const Basic: React.FC<IProps> = (props) => {
   const { selectedCell, flowChart } = props;
-  console.log(99,selectedCell);
+  console.log(99, selectedCell);
   const [data, setData] = useState<IBasicData>(selectedCell.getData());
-  const { label, trigger, dependencies, configSchema, inputMode, outputMode } = data || {};
+  const { label, trigger, dependencies, configSchema, inputMode, outputMode } =
+    data || {};
 
   // life
   useEffect(() => {
