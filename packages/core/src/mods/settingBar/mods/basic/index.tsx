@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './index.module.less';
 
-import { Card } from 'antd';
+import { Card, Select } from 'antd';
 import { Cell, Graph } from '@antv/x6';
 import Json from '../../components/json';
 import Input from '../../components/input';
+
+const { Option } = Select;
 
 interface IProps {
   selectedCell: Cell;
@@ -17,12 +19,15 @@ interface IBasicData {
   trigger?: string;
   dependencies: string;
   configSchema: string;
+  inputMode: string;
+  outputMode: string;
 }
 
 const Basic: React.FC<IProps> = (props) => {
   const { selectedCell, flowChart } = props;
+  console.log(99,selectedCell);
   const [data, setData] = useState<IBasicData>(selectedCell.getData());
-  const { label, trigger, dependencies, configSchema } = data || {};
+  const { label, trigger, dependencies, configSchema, inputMode, outputMode } = data || {};
 
   // life
   useEffect(() => {
@@ -57,6 +62,12 @@ const Basic: React.FC<IProps> = (props) => {
   const onChangeDependencies = (val: string): void => {
     commonChange('dependencies', val);
   };
+  const onChangeInputMode = (val: string): void => {
+    commonChange('inputMode', val);
+  };
+  const onChangeOutputMode = (val: string): void => {
+    commonChange('outputMode', val);
+  };
 
   return (
     <div className={styles.container}>
@@ -78,9 +89,30 @@ const Basic: React.FC<IProps> = (props) => {
           </div>
         )}
       </Card>
+      <Card title="入参模式">
+        <Select
+          className={styles.select}
+          defaultValue={inputMode}
+          onChange={onChangeInputMode}
+        >
+          <Option value="default">依赖上一节点出参</Option>
+          <Option value="api">依赖接口入参</Option>
+          <Option value="normal">普通模式</Option>
+        </Select>
+      </Card>
+      <Card title="结果处理模式">
+        <Select
+          className={styles.select}
+          defaultValue={outputMode}
+          onChange={onChangeOutputMode}
+        >
+          <Option value="nopack">无</Option>
+          <Option value="pack">拆包</Option>
+        </Select>
+      </Card>
       <Json
         name={'dependencies'}
-        title={'依赖'}
+        title={'依赖包'}
         value={dependencies}
         isConfig={false}
         onValueChange={onChangeDependencies}

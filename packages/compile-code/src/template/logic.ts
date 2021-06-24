@@ -154,6 +154,8 @@ export default class Logic extends EventEmitter {
       funcName: curNode.data.funcName || '',
       provider: curNode.data.provider || '',
       providerType: curNode.data.providerType || '',
+      inputMode: curNode.data.inputMode || '',
+      outputMode: curNode.data.outputMode || '',
     });
     await this._execNode(this._unsafeCtx, curNode, undefined, callback);
   }

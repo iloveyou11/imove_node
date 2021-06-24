@@ -34,6 +34,8 @@ const simplifyDSL = (dsl: DSL): Cell.Properties => {
         newCell.data.funcName = cell.data.funcName || '';
         newCell.data.provider = cell.data.provider || '';
         newCell.data.providerType = cell.data.providerType || '';
+        newCell.data.inputMode = cell.data.inputMode || '';
+        newCell.data.outputMode = cell.data.outputMode || '';
         return newCell;
       }
     }),

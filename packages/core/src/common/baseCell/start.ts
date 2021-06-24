@@ -100,6 +100,8 @@ const schema = {
     trigger: 'start',
     dependencies: '{\n  \n}',
     code: 'export default async function(ctx) {\n  \n}',
+    inputMode: 'default',
+    outputMode: 'nopack'
   },
 };
 
