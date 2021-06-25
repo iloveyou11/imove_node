@@ -25,7 +25,6 @@ interface IBasicData {
 
 const Basic: React.FC<IProps> = (props) => {
   const { selectedCell, flowChart } = props;
-  console.log(99, selectedCell);
   const [data, setData] = useState<IBasicData>(selectedCell.getData());
   const { label, trigger, dependencies, configSchema, inputMode, outputMode } =
     data || {};
@@ -83,7 +82,7 @@ const Basic: React.FC<IProps> = (props) => {
           <div className={styles.input}>
             <Input
               name={'trigger'}
-              title={'逻辑触发名称'}
+              title={'流程触发CODE'}
               value={trigger}
               onValueChange={onChangeTrigger}
             />
@@ -113,19 +112,19 @@ const Basic: React.FC<IProps> = (props) => {
       </Card>
       <Json
         name={'dependencies'}
-        title={'依赖包'}
+        title={'npm依赖包'}
         value={dependencies}
         isConfig={false}
         onValueChange={onChangeDependencies}
       />
-      <Json
+      {/* <Json
         name={'configSchema'}
         title={'投放配置'}
         selectedCell={selectedCell}
         value={configSchema}
         isConfig={true}
         onValueChange={onChangeConfigSchema}
-      />
+      /> */}
     </div>
   );
 };

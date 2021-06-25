@@ -82,7 +82,7 @@ const Json: React.FC<IJsonProps> = (props) => {
       title={title}
       extra={
         <Button type="link" onClick={onClickEdit}>
-          编辑
+          添加
         </Button>
       }
     >

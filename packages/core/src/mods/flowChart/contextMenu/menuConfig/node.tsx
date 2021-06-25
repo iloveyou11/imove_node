@@ -53,7 +53,11 @@ const nodeMenuConfig = [
     title: '编辑代码',
     icon: <FormOutlined />,
     disabled(flowChart: Graph) {
-      return getSelectedNodes(flowChart).length !== 1;
+      const selectedNodes = getSelectedNodes(flowChart);
+      const shape = selectedNodes[0].shape;
+      const isServiceNode =
+        shape.startsWith('imove-behavior') && shape.length > 14;
+      return selectedNodes.length !== 1 || isServiceNode;
     },
     handler(flowChart: Graph) {
       flowChart.trigger('graph:editCode');
@@ -64,7 +68,11 @@ const nodeMenuConfig = [
     title: '执行代码',
     icon: <CodeOutlined />,
     disabled(flowChart: Graph) {
-      return getSelectedNodes(flowChart).length !== 1;
+      const selectedNodes = getSelectedNodes(flowChart);
+      const shape = selectedNodes[0].shape;
+      const isServiceNode =
+        shape.startsWith('imove-behavior') && shape.length > 14;
+      return selectedNodes.length !== 1 || isServiceNode;
     },
     handler(flowChart: Graph) {
       flowChart.trigger('graph:runCode');

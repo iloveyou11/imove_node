@@ -82,8 +82,11 @@ const registerEvents = (flowChart: Graph): void => {
       args.edge.attr('line/strokeWidth', '2px');
     }
   });
-  flowChart.on('node:dblclick', () => {
-    flowChart.trigger('graph:editCode');
+  flowChart.on('node:dblclick', (args) => {
+    const shape = args.node.shape;
+    const isServiceNode =
+      shape.startsWith('imove-behavior') && shape.length > 14;
+    !isServiceNode && flowChart.trigger('graph:editCode');
   });
   flowChart.on('blank:contextmenu', (args) => {
     const {
