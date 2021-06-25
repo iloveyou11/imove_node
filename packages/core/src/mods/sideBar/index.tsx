@@ -147,7 +147,7 @@ const PanelContent: React.FC<IPanelContentProps> = (props) => {
         Object.keys(groupObj).map((domain) => {
           const nodes = groupObj[domain];
           return (
-            <Card title={domain}>
+            <Card title={domain} className={styles.card}>
               {nodes.map((node: any) => {
                 const { id, name } = node;
                 const type = `imove-behavior-${id}`;
