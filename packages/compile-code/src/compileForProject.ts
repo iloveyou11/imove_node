@@ -15,7 +15,7 @@ interface IOutput {
     [fileName: string]: string;
   };
   'context.ts': string;
-  'dsl.json': string;
+  'dsl.ts': string;
   'index.ts': string;
   'logic.ts': string;
 }
@@ -24,7 +24,7 @@ const compile = (dsl: DSL, plugins = []): IOutput => {
   const output: IOutput = {
     nodeFns: extractNodeFns(dsl),
     'context.ts': contextTpl,
-    'dsl.json': JSON.stringify(simplifyDSL(dsl), null, 2),
+    'dsl.ts': 'export default ' + JSON.stringify(simplifyDSL(dsl), null, 2),
     'index.ts': addPlugins(indexTpl, plugins),
     'logic.ts': logicTpl,
   };

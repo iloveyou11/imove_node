@@ -124,7 +124,7 @@ export default class Logic extends EventEmitter {
     }
   }
 
-  async _execNode(ctx, curNode, lastRet, callback) {
+  async _execNode(ctx, curNode, lastRet) {
     ctx._transitTo(curNode, lastRet);
     const fn = nodeFns[curNode.id];
     this._runLifecycleEvent('enterNode', ctx);
@@ -134,16 +134,18 @@ export default class Logic extends EventEmitter {
       lastRet = curRet;
     }
     const nextNodes = this._getNextNodes(ctx, curNode, curRet);
-    if (nextNodes.length > 0) {
-      nextNodes.forEach(async (node) => {
-        await this._execNode(ctx, node, lastRet, callback);
-      });
+    if (nextNodes.length === 1) {
+      return this._execNode(ctx, nextNodes[0], lastRet);
+    } else if (nextNodes.length > 1) {
+      for (const node of nextNodes) {
+        await this._execNode(ctx, node, lastRet);
+      }
     } else {
-      callback && callback(lastRet);
+      return lastRet;
     }
   }
 
-  async invoke(trigger, data, callback) {
+  async invoke(trigger, data) {
     const curNode = this._getStartNode(trigger);
     if (!curNode) {
       return Promise.reject(new Error(\`Invoke failed! No logic-start named \${trigger} found!\`));
@@ -157,7 +159,7 @@ export default class Logic extends EventEmitter {
       inputMode: curNode.data.inputMode || '',
       outputMode: curNode.data.outputMode || '',
     });
-    await this._execNode(this._unsafeCtx, curNode, undefined, callback);
+    return this._execNode(this._unsafeCtx, curNode, undefined);
   }
 }
 `;

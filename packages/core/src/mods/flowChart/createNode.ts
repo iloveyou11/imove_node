@@ -110,7 +110,67 @@ const createNode = (
       dependencies: '{\n  \n}',
       inputMode: 'default',
       outputMode: 'nopack',
-      code: 'export default async function(ctx) {\n const { serviceId: id, funcName, provider, providerType, inputMode, outputMode } = ctx.curNode.data;\n const providerClass = await ctx.payload.ctx.requestContext.getAsync(provider); \n const params = ctx.payload.body[id] || []; \n const rst = await providerClass[funcName](...params); \n ctx.setContext({[id]: rst}); \n return rst; \n}',
+      code: `export default async function (ctx) {
+  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;
+  const providerClass = await getProviderClazz(ctx);
+  const params = assembleParams(ctx);
+
+  const rst = await providerClass[funcName](...params);
+  const result = getResultWithOutputMode(rst, outputMode);
+
+  ctx.setContext({[id]: result});
+  return result;
+}
+
+function getProviderClazz(ctx) {
+  const {provider, providerType} = ctx.curNode.data;
+  const applicationContext = ctx.payload.ctx;
+  if (providerType === 'pegasus') {
+    return applicationContext.service.pegasus[provider];
+  }
+  return applicationContext.requestContext.getAsync(provider);
+}
+
+/**
+ * 入参处理
+ */
+function assembleParams(ctx) {
+  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;
+
+  let params;
+  if (inputMode === 'normal') {
+    params = ctx.payload.body[id] || [];
+  } else if (inputMode === 'default') {
+    params = ctx.getPipe() || [];
+  } else if (inputMode === 'api') {
+    params = ctx.payload.body.data || [];
+  } else {
+    throw Error('Invalid inputMode: ' + inputMode);
+  }
+
+  if (providerType === 'pegasus') {
+    const user = ctx.payload.ctx.user;
+    params.push(require('@ali/egg-pegasus').AppInfo.from({
+      appName: 'zebra', nick: user.cname, workId: user.workid
+    }));
+  }
+
+  return params;
+}
+
+/**
+ * 结果处理
+ */
+function getResultWithOutputMode(rst, outputMode) {
+  if (outputMode === 'pack') {
+    if (!rst.success) {
+      throw Error(rst.message || rst.errorMessage);
+    }
+    return rst.data;
+  }
+  return rst;
+}
+`,
     },
   };
   return schema;
