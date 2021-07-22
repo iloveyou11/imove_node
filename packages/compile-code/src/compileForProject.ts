@@ -1,7 +1,6 @@
 import { Cell } from '@antv/x6';
 import addPlugins from './addPlugins';
-import simplifyDSL from './simplifyDSL';
-import extractNodeFns from './extractNodeFns';
+import generateConfig from './generateConfig';
 import logicTpl from './template/logic';
 import indexTpl from './template/index';
 import contextTpl from './template/context';
@@ -11,22 +10,18 @@ interface DSL {
 }
 
 interface IOutput {
-  nodeFns: {
-    [fileName: string]: string;
-  };
   'context.ts': string;
-  'dsl.ts': string;
   'index.ts': string;
   'logic.ts': string;
+  'config.json': string;
 }
 
 const compile = (dsl: DSL, plugins = []): IOutput => {
   const output: IOutput = {
-    nodeFns: extractNodeFns(dsl),
     'context.ts': contextTpl,
-    'dsl.ts': 'export default ' + JSON.stringify(simplifyDSL(dsl), null, 2),
     'index.ts': addPlugins(indexTpl, plugins),
     'logic.ts': logicTpl,
+    'config.json': generateConfig(dsl),
   };
   return output;
 };

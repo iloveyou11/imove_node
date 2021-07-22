@@ -1,4 +1,4 @@
-export default `import nodeFns from './nodeFns';
+export default `import { nodeFns } from './config.json';
 import Context from './context';
 const EventEmitter = require('events');
 
@@ -126,7 +126,10 @@ export default class Logic extends EventEmitter {
 
   async _execNode(ctx, curNode, lastRet) {
     ctx._transitTo(curNode, lastRet);
-    const fn = nodeFns[curNode.id];
+    const fnStr = nodeFns[curNode.id];
+    const params = fnStr.match(/((?<=\()([a-z]+)(?=\)))/g)[0];
+    const func = fnStr.match(/((?<=\{)([\s\S]*)(?=\}))/g)[0];
+    const fn = new Function(params, func);
     this._runLifecycleEvent('enterNode', ctx);
     const curRet = await fn(ctx);
     this._runLifecycleEvent('leaveNode', ctx);
