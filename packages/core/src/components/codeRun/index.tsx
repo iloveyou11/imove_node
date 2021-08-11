@@ -14,9 +14,9 @@ import { toSelectedCellsJSON } from '../../utils/flowChartUtils';
 
 // FIXME: https://github.com/tomkp/react-split-pane/issues/541
 // @ts-ignore
-import SplitPane from 'react-split-pane/lib/SplitPane';
+import SplitPane from 'react-split-pane';
 // @ts-ignore
-import Pane from 'react-split-pane/lib/Pane';
+import Pane from 'react-split-pane';
 
 const defaultInput = {
   pipe: {},

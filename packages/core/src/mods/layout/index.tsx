@@ -5,9 +5,9 @@ import styles from './index.module.less';
 import { Graph } from '@antv/x6';
 
 // @ts-ignore
-import SplitPane from 'react-split-pane/lib/SplitPane';
+import SplitPane from 'react-split-pane';
 // @ts-ignore
-import Pane from 'react-split-pane/lib/Pane';
+import Pane from 'react-split-pane';
 
 interface ISubComponentProps {
   flowChart: Graph;
