@@ -16,7 +16,7 @@ Object.values(baseCellSchemaMap).forEach((schema) => {
 // monitoring service node and register cell
 document.addEventListener(
   'services',
-  function (evt) {
+  function (evt: any) {
     const dataString = evt.detail;
     try {
       const data = JSON.parse(dataString);

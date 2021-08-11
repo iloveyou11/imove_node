@@ -13,7 +13,7 @@ let cellsMap = cellMap;
 // update preview cell map
 document.addEventListener(
   'services',
-  function (evt) {
+  function (evt: any) {
     const dataString = evt.detail;
     try {
       const data = JSON.parse(dataString);
@@ -30,9 +30,9 @@ document.addEventListener(
 );
 
 const classifiedByKey = (objectArray: [], key: string) => {
-  const newObj = {};
+  const newObj: any = {};
   objectArray.forEach((obj) => {
-    const array = newObj[obj[key]] || [];
+    const array: any[] = newObj[obj[key]] || [];
     array.push(obj);
     newObj[obj[key]] = array;
   });
@@ -75,7 +75,7 @@ const SideBar: React.FC<ISideBarProps> = (props) => {
     // display preview cell in the sidebar
     document.addEventListener(
       'services',
-      function (evt) {
+      function (evt: any) {
         const dataString = evt.detail;
         try {
           const data = JSON.parse(dataString);
@@ -126,6 +126,7 @@ const PanelContent: React.FC<IPanelContentProps> = (props) => {
   const onMouseDown = (evt: any, cellType: string) => {
     dnd.start(Node.create({ shape: cellType }), evt);
   };
+  // @ts-ignore
   const groupObj = isObjectArr ? classifiedByKey(cellTypes, 'domain') : {};
 
   return (
