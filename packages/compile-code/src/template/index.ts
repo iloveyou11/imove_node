@@ -1,8 +1,8 @@
 export default `import Logic from './logic';
-import { dsl } from './config.json';
+import config from './config';
 // import plugins here
 
-const logic = new Logic({ dsl });
+const logic = new Logic({ dsl: config.dsl });
 
 // use plugins here
 

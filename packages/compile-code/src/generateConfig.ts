@@ -28,7 +28,7 @@ const generateConfig = (dsl: DSL): string => {
     nodeFns,
     dsl: simplifyDSL(dsl),
   };
-  return JSON.stringify(config);
+  return `export default ${JSON.stringify(config)}`;
 };
 
 export default generateConfig;

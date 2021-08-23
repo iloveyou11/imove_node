@@ -1,5 +1,6 @@
-export default `import { nodeFns } from './config.json';
+export default `import config from './config';
 import Context from './context';
+import * as vm from 'vm';
 const EventEmitter = require('events');
 
 const LIFECYCLE = new Set(['ctxCreated', 'enterNode', 'leaveNode']);
@@ -13,11 +14,19 @@ export default class Logic extends EventEmitter {
   private dsl;
   private lifeCycleEvents;
   private _unsafeCtx;
+  private sandbox;
 
   constructor(opts = {}) {
     super();
     this.dsl = (opts as any).dsl;
     this.lifeCycleEvents = {};
+
+    this.sandbox = {
+      require,
+      console,
+      module,
+    };
+    vm.createContext(this.sandbox);
   }
 
   get cells() {
@@ -126,11 +135,12 @@ export default class Logic extends EventEmitter {
 
   async _execNode(ctx, curNode, lastRet) {
     ctx._transitTo(curNode, lastRet);
-    const fnStr = nodeFns[curNode.id];
-    const params = fnStr.match(/((?<=\()([a-z]+)(?=\)))/g)[0];
-    const func = fnStr.match(/((?<=\{)([\s\S]*)(?=\}))/g)[0];
-    const fn = new Function(params, func);
     this._runLifecycleEvent('enterNode', ctx);
+    const code = curNode.data.funcName ? inlineFn : config.nodeFns[curNode.id];
+
+    // replace 兼容
+    const fn = vm.runInContext(\`module.exports = $\{code.replace('export default ', '')\}\`, this.sandbox);
+
     const curRet = await fn(ctx);
     this._runLifecycleEvent('leaveNode', ctx);
     if (curNode.shape !== SHAPES.BRANCH) {
@@ -165,4 +175,65 @@ export default class Logic extends EventEmitter {
     return this._execNode(this._unsafeCtx, curNode, undefined);
   }
 }
+
+const inlineFn = \`async function(ctx) {
+  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;
+  const providerClass = await getProviderClazz(ctx);
+  const params = assembleParams(ctx);
+
+  const rst = await providerClass[funcName](...params);
+  const result = getResultWithOutputMode(rst, outputMode);
+
+  ctx.setContext({[id]: result});
+  return result;
+}
+
+function getProviderClazz(ctx) {
+  const {provider, providerType} = ctx.curNode.data;
+  const applicationContext = ctx.payload.ctx;
+  if (providerType === 'pegasus') {
+    return applicationContext.service.pegasus[provider];
+  }
+  return applicationContext.requestContext.getAsync(provider);
+}
+
+/**
+ * 入参处理
+ */
+function assembleParams(ctx) {
+  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;
+
+  let params;
+  if (inputMode === 'normal') {
+    params = ctx.payload.body[id] || [];
+  } else if (inputMode === 'default') {
+    params = ctx.getPipe() || [];
+  } else if (inputMode === 'api') {
+    params = ctx.payload.body.data || [];
+  } else {
+    throw Error('Invalid inputMode: ' + inputMode);
+  }
+
+  if (providerType === 'pegasus') {
+    const user = ctx.payload.ctx.user;
+    params.push(require('@ali/egg-pegasus').AppInfo.from({
+      appName: 'zebra', nick: user.cname, workId: user.workid
+    }));
+  }
+
+  return params;
+}
+
+/**
+ * 结果处理
+ */
+function getResultWithOutputMode(rst, outputMode) {
+  if (outputMode === 'pack') {
+    if (!rst.success) {
+      throw Error(rst.message || rst.errorMessage);
+    }
+    return rst.data;
+  }
+  return rst;
+}\`;
 `;
