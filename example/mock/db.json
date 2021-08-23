@@ -2,67 +2,79 @@
   "default": [
     {
       "position": {
-        "x": 460,
-        "y": 50
+        "x": 80,
+        "y": 90
       },
       "size": {
-        "width": 80,
-        "height": 40
+        "width": 60,
+        "height": 60
       },
-      "shape": "imove-behavior",
+      "attrs": {
+        "label": {
+          "text": "获取页面初始化信息"
+        }
+      },
+      "shape": "imove-start",
       "data": {
-        "label": "处理",
-        "configSchema": "",
+        "label": "获取页面初始化信息",
+        "configSchema": "{\n  \n}",
         "configData": {},
+        "trigger": "getBuilderInitInfo",
         "dependencies": "{\n  \n}",
-        "code": "export default async function(ctx) {\n  console.log('1212')\n}"
+        "code": "export default async function(ctx) {\n  \n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
       },
       "ports": {
         "groups": {
           "top": {
             "position": "top",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
           },
           "right": {
             "position": "right",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
           },
           "bottom": {
             "position": "bottom",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
           },
           "left": {
             "position": "left",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
@@ -87,73 +99,84 @@
           }
         ]
       },
-      "id": "81e87610-c749-4667-8382-00c62be30e2b",
+      "id": "18cb0e89-c232-450b-9d71-4598c31ba18d",
       "zIndex": 1
     },
     {
       "position": {
-        "x": 56,
-        "y": 30
+        "x": 80,
+        "y": 335
       },
       "size": {
-        "width": 80,
-        "height": 80
+        "width": 60,
+        "height": 60
+      },
+      "attrs": {
+        "label": {
+          "text": "获取模块版本及文件内容"
+        }
       },
       "shape": "imove-start",
       "data": {
-        "label": "开始",
-        "configSchema": "",
+        "label": "获取模块版本及文件内容",
+        "configSchema": "{\n  \n}",
         "configData": {},
-        "trigger": "start",
+        "trigger": "getComponentConfig",
         "dependencies": "{\n  \n}",
-        "code": "export default async function(ctx) {\n  \n}"
+        "code": "export default async function(ctx) {\n  \n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
       },
       "ports": {
         "groups": {
           "top": {
             "position": "top",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
           },
           "right": {
             "position": "right",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
           },
           "bottom": {
             "position": "bottom",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
           },
           "left": {
             "position": "left",
+            "zIndex": 10,
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
@@ -178,33 +201,32 @@
           }
         ]
       },
-      "id": "de868d18-9ec0-4dac-abbe-5cb9e3c20e2f",
+      "id": "4a0a7e78-db4d-46c2-a6cb-82e18148321d",
       "zIndex": 2
     },
     {
       "position": {
-        "x": 246,
-        "y": 50
+        "x": 203,
+        "y": 105
       },
       "size": {
-        "width": 80,
-        "height": 40
+        "width": 60,
+        "height": 30
       },
-      "shape": "imove-branch",
+      "attrs": {
+        "label": {
+          "text": "获取页面ID"
+        }
+      },
+      "shape": "imove-behavior",
       "data": {
-        "label": "判断",
-        "configSchema": "",
+        "label": "获取页面ID",
+        "configSchema": "{\n  \n}",
         "configData": {},
         "dependencies": "{\n  \n}",
-        "ports": {
-          "right": {
-            "condition": "true"
-          },
-          "bottom": {
-            "condition": "false"
-          }
-        },
-        "code": "export default async function(ctx) {\n  return true;\n}"
+        "code": "export default async function(ctx) {\n  return [ ctx.getPayload().body.pageId ];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
       },
       "ports": {
         "groups": {
@@ -212,54 +234,46 @@
             "position": "top",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
           },
           "right": {
-            "zIndex": 999999999,
             "position": "right",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
-            },
-            "label": {
-              "position": "right"
             }
           },
           "bottom": {
-            "zIndex": 999999999,
             "position": "bottom",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
-            },
-            "label": {
-              "position": "bottom"
             }
           },
           "left": {
             "position": "left",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
@@ -272,21 +286,11 @@
           },
           {
             "id": "right",
-            "group": "right",
-            "attrs": {
-              "text": {
-                "text": ""
-              }
-            }
+            "group": "right"
           },
           {
             "id": "bottom",
-            "group": "bottom",
-            "attrs": {
-              "text": {
-                "text": ""
-              }
-            }
+            "group": "bottom"
           },
           {
             "id": "left",
@@ -294,177 +298,155 @@
           }
         ]
       },
-      "id": "a6da6684-96c8-4595-bec6-a94122b61e30",
+      "id": "b1766146-a8f4-44c7-bd98-883693aa2615",
       "zIndex": 3
     },
     {
-      "shape": "edge",
-      "id": "cbcbd0ea-4a2a-4d2a-8135-7b4b7d7ec50d",
-      "source": {
-        "cell": "de868d18-9ec0-4dac-abbe-5cb9e3c20e2f",
-        "port": "right"
+      "position": {
+        "x": 310,
+        "y": 105
       },
-      "target": {
-        "cell": "a6da6684-96c8-4595-bec6-a94122b61e30",
-        "port": "left"
+      "size": {
+        "width": 60,
+        "height": 30
       },
+      "shape": "imove-behavior-getBuilderInitialInfo",
+      "data": {
+        "serviceId": "getBuilderInitialInfo",
+        "label": "获取页面搭建初始化信息",
+        "domain": "page",
+        "funcName": "getBuilderInitialInfo",
+        "provider": "pageFactory",
+        "providerType": "normal",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "pack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "c01ebdb2-adb0-4321-8126-1d112907790b",
       "zIndex": 4
     },
     {
       "shape": "edge",
-      "id": "ea10b718-1c66-4a3d-b29c-b0b20e6bba11",
+      "id": "070ad699-1b65-4cf1-8b0b-8213587bc1f1",
       "source": {
-        "cell": "a6da6684-96c8-4595-bec6-a94122b61e30",
+        "cell": "18cb0e89-c232-450b-9d71-4598c31ba18d",
         "port": "right"
       },
       "target": {
-        "cell": "81e87610-c749-4667-8382-00c62be30e2b",
+        "cell": "b1766146-a8f4-44c7-bd98-883693aa2615",
         "port": "left"
       },
-      "zIndex": 5,
-      "labels": [
-        {
-          "attrs": {
-            "label": {
-              "text": "是"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "position": {
-        "x": 246,
-        "y": 270
-      },
-      "size": {
-        "width": 80,
-        "height": 40
-      },
-      "shape": "imove-behavior",
-      "data": {
-        "label": "处理",
-        "configSchema": "",
-        "configData": {},
-        "dependencies": "{\n  \n}",
-        "code": "export default async function(ctx) {\n  console.log('test')\n}"
-      },
-      "ports": {
-        "groups": {
-          "top": {
-            "position": "top",
-            "attrs": {
-              "circle": {
-                "r": 3,
-                "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
-                "fill": "#fff"
-              }
-            }
-          },
-          "right": {
-            "position": "right",
-            "attrs": {
-              "circle": {
-                "r": 3,
-                "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
-                "fill": "#fff"
-              }
-            }
-          },
-          "bottom": {
-            "position": "bottom",
-            "attrs": {
-              "circle": {
-                "r": 3,
-                "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
-                "fill": "#fff"
-              }
-            }
-          },
-          "left": {
-            "position": "left",
-            "attrs": {
-              "circle": {
-                "r": 3,
-                "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
-                "fill": "#fff"
-              }
-            }
-          }
-        },
-        "items": [
-          {
-            "id": "top",
-            "group": "top"
-          },
-          {
-            "id": "right",
-            "group": "right"
-          },
-          {
-            "id": "bottom",
-            "group": "bottom"
-          },
-          {
-            "id": "left",
-            "group": "left"
-          }
-        ]
-      },
-      "id": "c538d496-eeaa-4e95-9752-2a5d0c168e13",
-      "zIndex": 6
+      "zIndex": 5
     },
     {
       "shape": "edge",
-      "id": "4ffa7a28-a339-4686-81d8-20be9d62de14",
+      "id": "4c378901-2718-4a44-93a1-fd69b4135ab2",
       "source": {
-        "cell": "a6da6684-96c8-4595-bec6-a94122b61e30",
-        "port": "bottom"
+        "cell": "b1766146-a8f4-44c7-bd98-883693aa2615",
+        "port": "right"
       },
       "target": {
-        "cell": "c538d496-eeaa-4e95-9752-2a5d0c168e13",
-        "port": "top"
+        "cell": "c01ebdb2-adb0-4321-8126-1d112907790b",
+        "port": "left"
       },
-      "zIndex": 7,
-      "labels": [
-        {
-          "attrs": {
-            "label": {
-              "text": "否"
-            }
-          }
-        }
-      ]
+      "zIndex": 6
     },
     {
       "position": {
-        "x": 56,
-        "y": 380
+        "x": 426,
+        "y": 104
       },
       "size": {
-        "width": 100,
-        "height": 40
+        "width": 60,
+        "height": 30
       },
       "attrs": {
         "label": {
-          "text": "在线运行测试"
+          "text": "获取页面ID"
         }
       },
       "shape": "imove-behavior",
       "data": {
-        "label": "在线运行测试",
-        "configSchema": "",
+        "label": "获取页面ID",
+        "configSchema": "{\n  \n}",
         "configData": {},
-        "dependencies": "{\n  \"lodash.get\": \"4.4.2\"\n}",
-        "code": "import fpget from 'lodash.get';\n\nexport default async function(ctx) {\n  const obj = {a: {b: 'hello imove~'}};\n  console.log(fpget(obj, 'a.b'));\n  return ctx.getPipe();\n}"
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  return [ ctx.getPayload().body.pageId ];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
       },
       "ports": {
         "groups": {
@@ -472,10 +454,10 @@
             "position": "top",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
@@ -484,10 +466,10 @@
             "position": "right",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
@@ -496,10 +478,10 @@
             "position": "bottom",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
@@ -508,10 +490,10 @@
             "position": "left",
             "attrs": {
               "circle": {
-                "r": 3,
+                "r": 2.5,
                 "magnet": true,
-                "stroke": "#666",
-                "strokeWidth": 1,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
                 "fill": "#fff"
               }
             }
@@ -536,8 +518,1671 @@
           }
         ]
       },
-      "id": "1d174369-929b-4bd5-8841-f271399c4a4f",
+      "id": "a567ab14-b9c9-4999-a03f-364086306666",
+      "zIndex": 7
+    },
+    {
+      "shape": "edge",
+      "id": "8e28ca09-4892-4fa1-8047-7e7efcaafe15",
+      "source": {
+        "cell": "c01ebdb2-adb0-4321-8126-1d112907790b",
+        "port": "right"
+      },
+      "target": {
+        "cell": "a567ab14-b9c9-4999-a03f-364086306666",
+        "port": "left"
+      },
+      "zIndex": 8
+    },
+    {
+      "position": {
+        "x": 548,
+        "y": 105
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "shape": "imove-behavior-getPageById",
+      "data": {
+        "serviceId": "getPageById",
+        "label": "根据ID查询页面",
+        "domain": "page",
+        "funcName": "getById",
+        "provider": "pageServiceImpl",
+        "providerType": "normal",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "nopack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "4815690d-a0ff-4fec-b6b2-40ee6c54f498",
       "zIndex": 9
+    },
+    {
+      "shape": "edge",
+      "id": "de213b3b-adb4-4be6-aaec-61c2231b77f7",
+      "source": {
+        "cell": "a567ab14-b9c9-4999-a03f-364086306666",
+        "port": "right"
+      },
+      "target": {
+        "cell": "4815690d-a0ff-4fec-b6b2-40ee6c54f498",
+        "port": "left"
+      },
+      "zIndex": 10
+    },
+    {
+      "position": {
+        "x": 657,
+        "y": 105
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "获取分组ID"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "获取分组ID",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  return [ ctx.getPipe().channelId ];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "c8844a54-a127-411c-9efc-ea268b282337",
+      "zIndex": 11
+    },
+    {
+      "shape": "edge",
+      "id": "5195634b-3abb-4153-a870-85f633a5d836",
+      "source": {
+        "cell": "4815690d-a0ff-4fec-b6b2-40ee6c54f498",
+        "port": "right"
+      },
+      "target": {
+        "cell": "c8844a54-a127-411c-9efc-ea268b282337",
+        "port": "left"
+      },
+      "zIndex": 12
+    },
+    {
+      "position": {
+        "x": 777,
+        "y": 105
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "shape": "imove-behavior-getChannelBizConfig",
+      "data": {
+        "serviceId": "getChannelBizConfig",
+        "label": "获取分组业务功能配置",
+        "domain": "page",
+        "funcName": "getChannelBizConfig",
+        "provider": "channelFactory",
+        "providerType": "normal",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "nopack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "3309d8ad-767c-4c8e-a8fd-7c4238b92a9d",
+      "zIndex": 13
+    },
+    {
+      "shape": "edge",
+      "id": "a5f5d4e0-c4c4-48ed-95ab-de43568b803d",
+      "source": {
+        "cell": "c8844a54-a127-411c-9efc-ea268b282337",
+        "port": "right"
+      },
+      "target": {
+        "cell": "3309d8ad-767c-4c8e-a8fd-7c4238b92a9d",
+        "port": "left"
+      },
+      "zIndex": 14
+    },
+    {
+      "position": {
+        "x": 892,
+        "y": 105
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "出参处理"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "出参处理",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  const context = ctx.getContext();\n  const info = context.getBuilderInitialInfo;\n  const page = require('lodash').pick(context.getPageById, ['productType', 'forceTerminal']);\n  return Object.assign({}, info, {bizConfig: context.getChannelBizConfig}, {page});\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "18d00a5d-4710-41af-89e9-c8c4b2ec11ef",
+      "zIndex": 15
+    },
+    {
+      "shape": "edge",
+      "id": "515eb2f6-fc5c-4d25-96d8-59780a0bb47f",
+      "source": {
+        "cell": "3309d8ad-767c-4c8e-a8fd-7c4238b92a9d",
+        "port": "right"
+      },
+      "target": {
+        "cell": "18d00a5d-4710-41af-89e9-c8c4b2ec11ef",
+        "port": "left"
+      },
+      "zIndex": 16
+    },
+    {
+      "position": {
+        "x": 203,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "获取模块名称"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "获取模块名称",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  return [ctx.getPayload().body.name];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "621f85ca-b917-4651-bec7-659f0cc3e98a",
+      "zIndex": 17
+    },
+    {
+      "shape": "edge",
+      "id": "aded6c2d-e6a2-40ba-8e03-ffd2a346aa59",
+      "source": {
+        "cell": "4a0a7e78-db4d-46c2-a6cb-82e18148321d",
+        "port": "right"
+      },
+      "target": {
+        "cell": "621f85ca-b917-4651-bec7-659f0cc3e98a",
+        "port": "left"
+      },
+      "zIndex": 18
+    },
+    {
+      "position": {
+        "x": 310,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "shape": "imove-behavior-getComponentByName",
+      "data": {
+        "serviceId": "getComponentByName",
+        "label": "根据名称获取模块",
+        "domain": "component",
+        "funcName": "getByName",
+        "provider": "componentServiceImpl",
+        "providerType": "normal",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "nopack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "d1ddffdc-28a4-4123-a3f0-70ad99afcdfa",
+      "zIndex": 19
+    },
+    {
+      "shape": "edge",
+      "id": "d2f7aaf7-20f5-4133-b5d0-653d05f0eecc",
+      "source": {
+        "cell": "621f85ca-b917-4651-bec7-659f0cc3e98a",
+        "port": "right"
+      },
+      "target": {
+        "cell": "d1ddffdc-28a4-4123-a3f0-70ad99afcdfa",
+        "port": "left"
+      },
+      "zIndex": 20
+    },
+    {
+      "position": {
+        "x": 426,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "获取模块ID"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "获取模块ID",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  const componentId = ctx.getPipe().id;\n  if (!componentId) {\n    throw Error('模块不存在');\n  }\n  return [componentId];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "9df2ba49-e1d0-4265-9dfb-6be5a784ee8b",
+      "zIndex": 21
+    },
+    {
+      "shape": "edge",
+      "id": "9f2244d9-3b34-423a-a907-8bd1d0bc6ee6",
+      "source": {
+        "cell": "d1ddffdc-28a4-4123-a3f0-70ad99afcdfa",
+        "port": "right"
+      },
+      "target": {
+        "cell": "9df2ba49-e1d0-4265-9dfb-6be5a784ee8b",
+        "port": "left"
+      },
+      "zIndex": 22
+    },
+    {
+      "position": {
+        "x": 548,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "shape": "imove-behavior-getAllComponentVersions",
+      "data": {
+        "serviceId": "getAllComponentVersions",
+        "label": "获取模块所有版本",
+        "domain": "component",
+        "funcName": "getAllComponentVersions",
+        "provider": "componentVersion",
+        "providerType": "pegasus",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "pack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "2613e0d1-cf7d-4424-99df-de979715d60f",
+      "zIndex": 23
+    },
+    {
+      "shape": "edge",
+      "id": "021ac91d-6942-45c9-86f5-c31c6079f11b",
+      "source": {
+        "cell": "9df2ba49-e1d0-4265-9dfb-6be5a784ee8b",
+        "port": "right"
+      },
+      "target": {
+        "cell": "2613e0d1-cf7d-4424-99df-de979715d60f",
+        "port": "left"
+      },
+      "zIndex": 24
+    },
+    {
+      "position": {
+        "x": 657,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "获取package入参组装"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "获取package入参组装",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  const params = ctx.getPayload().body;\n  return [params.name, params.version, 'package.json', params.env];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "4578aa67-57c1-437e-8e2f-9c6bb9c29cb7",
+      "zIndex": 25
+    },
+    {
+      "shape": "edge",
+      "id": "1a4ff50c-6f9f-4076-80af-5522f0706bee",
+      "source": {
+        "cell": "2613e0d1-cf7d-4424-99df-de979715d60f",
+        "port": "right"
+      },
+      "target": {
+        "cell": "4578aa67-57c1-437e-8e2f-9c6bb9c29cb7",
+        "port": "left"
+      },
+      "zIndex": 26
+    },
+    {
+      "position": {
+        "x": 777,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "shape": "imove-behavior-getComponentVersionFile",
+      "data": {
+        "serviceId": "getComponentVersionFile",
+        "label": "获取模块文件",
+        "domain": "component",
+        "funcName": "getComponentVersionFile",
+        "provider": "componentVersion",
+        "providerType": "pegasus",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "pack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "1db4b703-0688-4056-80d9-0dd995ead2f5",
+      "zIndex": 27
+    },
+    {
+      "shape": "edge",
+      "id": "8b879498-fd00-4b7c-b5c2-22cd01484cf1",
+      "source": {
+        "cell": "4578aa67-57c1-437e-8e2f-9c6bb9c29cb7",
+        "port": "right"
+      },
+      "target": {
+        "cell": "1db4b703-0688-4056-80d9-0dd995ead2f5",
+        "port": "left"
+      },
+      "zIndex": 28
+    },
+    {
+      "position": {
+        "x": 892,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "获取tubes.ability入参组装"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "获取tubes.ability入参组装",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  ctx.setContext({'package': ctx.getPipe()});\n\n  const params = ctx.getPayload().body;\n  return [params.name, params.version, 'tubes.ability.json', params.env];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "5b796a04-1b67-4503-bd6b-4a8ee9645109",
+      "zIndex": 29
+    },
+    {
+      "position": {
+        "x": 1017,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "shape": "imove-behavior-getComponentVersionFile",
+      "data": {
+        "serviceId": "getComponentVersionFile",
+        "label": "获取模块文件",
+        "domain": "component",
+        "funcName": "getComponentVersionFile",
+        "provider": "componentVersion",
+        "providerType": "pegasus",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "pack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "69816d7a-b212-4960-8e26-f3521474be30",
+      "zIndex": 30
+    },
+    {
+      "shape": "edge",
+      "id": "4784b7af-69cc-4ec9-9a4d-721e360449dc",
+      "source": {
+        "cell": "1db4b703-0688-4056-80d9-0dd995ead2f5",
+        "port": "right"
+      },
+      "target": {
+        "cell": "5b796a04-1b67-4503-bd6b-4a8ee9645109",
+        "port": "left"
+      },
+      "zIndex": 31
+    },
+    {
+      "shape": "edge",
+      "id": "796b961b-9206-42d8-84bc-b187f95952a7",
+      "source": {
+        "cell": "5b796a04-1b67-4503-bd6b-4a8ee9645109",
+        "port": "right"
+      },
+      "target": {
+        "cell": "69816d7a-b212-4960-8e26-f3521474be30",
+        "port": "left"
+      },
+      "zIndex": 32
+    },
+    {
+      "position": {
+        "x": 1128,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "获取schema入参组装"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "获取schema入参组装",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n  ctx.setContext({'tubesAbility': ctx.getPipe()});\n\n  const params = ctx.getPayload().body;\n  return [params.name, params.version, 'schema.json', params.env];\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "2315b6cf-9795-4806-ac88-3bae68cd9c8c",
+      "zIndex": 33
+    },
+    {
+      "position": {
+        "x": 1234,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "shape": "imove-behavior-getComponentVersionFile",
+      "data": {
+        "serviceId": "getComponentVersionFile",
+        "label": "获取模块文件",
+        "domain": "component",
+        "funcName": "getComponentVersionFile",
+        "provider": "componentVersion",
+        "providerType": "pegasus",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "inputMode": "default",
+        "outputMode": "pack",
+        "code": "export default async function (ctx) {\n  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;\n  const providerClass = await getProviderClazz(ctx);\n  const params = assembleParams(ctx);\n\n  const rst = await providerClass[funcName](...params);\n  const result = getResultWithOutputMode(rst, outputMode);\n\n  ctx.setContext({[id]: result});\n  return result;\n}\n\nfunction getProviderClazz(ctx) {\n  const {provider, providerType} = ctx.curNode.data;\n  const applicationContext = ctx.payload.ctx;\n  if (providerType === 'pegasus') {\n    return applicationContext.service.pegasus[provider];\n  }\n  return applicationContext.requestContext.getAsync(provider);\n}\n\n/**\n * 入参处理\n */\nfunction assembleParams(ctx) {\n  const {serviceId: id, providerType, inputMode} = ctx.curNode.data;\n\n  let params;\n  if (inputMode === 'normal') {\n    params = ctx.payload.body[id] || [];\n  } else if (inputMode === 'default') {\n    params = ctx.getPipe() || [];\n  } else if (inputMode === 'api') {\n    params = ctx.payload.body.data || [];\n  } else {\n    throw Error('Invalid inputMode: ' + inputMode);\n  }\n\n  if (providerType === 'pegasus') {\n    const user = ctx.payload.ctx.user;\n    params.push(require('@ali/egg-pegasus').AppInfo.from({\n      appName: 'zebra', nick: user.cname, workId: user.workid\n    }));\n  }\n\n  return params;\n}\n\n/**\n * 结果处理\n */\nfunction getResultWithOutputMode(rst, outputMode) {\n  if (outputMode === 'pack') {\n    if (!rst.success) {\n      throw Error(rst.message || rst.errorMessage);\n    }\n    return rst.data;\n  }\n  return rst;\n}\n"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "1df34f74-9350-45b8-beb5-6f7137d1bc11",
+      "zIndex": 34
+    },
+    {
+      "shape": "edge",
+      "id": "cb339fee-2a5d-4ffc-bb49-3498f6047358",
+      "source": {
+        "cell": "69816d7a-b212-4960-8e26-f3521474be30",
+        "port": "right"
+      },
+      "target": {
+        "cell": "2315b6cf-9795-4806-ac88-3bae68cd9c8c",
+        "port": "left"
+      },
+      "zIndex": 35
+    },
+    {
+      "shape": "edge",
+      "id": "32c4c30b-9281-4e26-a1a1-d9b86f8d51fe",
+      "source": {
+        "cell": "2315b6cf-9795-4806-ac88-3bae68cd9c8c",
+        "port": "right"
+      },
+      "target": {
+        "cell": "1df34f74-9350-45b8-beb5-6f7137d1bc11",
+        "port": "left"
+      },
+      "zIndex": 36
+    },
+    {
+      "position": {
+        "x": 1368,
+        "y": 350
+      },
+      "size": {
+        "width": 60,
+        "height": 30
+      },
+      "attrs": {
+        "label": {
+          "text": "出参组装"
+        }
+      },
+      "shape": "imove-behavior",
+      "data": {
+        "label": "出参组装",
+        "configSchema": "{\n  \n}",
+        "configData": {},
+        "dependencies": "{\n  \n}",
+        "code": "export default async function(ctx) {\n    const context = ctx.getContext();\n    \n    return {\n        versions: context.getAllComponentVersions, \n        package: context.package,\n        tubesAbility: context.tubesAbility, \n        schema: ctx.getPipe(),\n        component: context.getComponentByName\n    };\n}",
+        "inputMode": "default",
+        "outputMode": "nopack"
+      },
+      "ports": {
+        "groups": {
+          "top": {
+            "position": "top",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "right": {
+            "position": "right",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "bottom": {
+            "position": "bottom",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          },
+          "left": {
+            "position": "left",
+            "attrs": {
+              "circle": {
+                "r": 2.5,
+                "magnet": true,
+                "stroke": "#4E68A3",
+                "strokeWidth": 2,
+                "fill": "#fff"
+              }
+            }
+          }
+        },
+        "items": [
+          {
+            "id": "top",
+            "group": "top"
+          },
+          {
+            "id": "right",
+            "group": "right"
+          },
+          {
+            "id": "bottom",
+            "group": "bottom"
+          },
+          {
+            "id": "left",
+            "group": "left"
+          }
+        ]
+      },
+      "id": "9533b7bb-5ab6-4f82-8323-7aa16abee627",
+      "zIndex": 37
+    },
+    {
+      "shape": "edge",
+      "id": "1cb73fb4-5b68-4824-9a0a-6f557ab6d3b8",
+      "source": {
+        "cell": "1df34f74-9350-45b8-beb5-6f7137d1bc11",
+        "port": "right"
+      },
+      "target": {
+        "cell": "9533b7bb-5ab6-4f82-8323-7aa16abee627",
+        "port": "left"
+      },
+      "zIndex": 38
     }
   ]
 }
