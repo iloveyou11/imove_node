@@ -134,11 +134,7 @@ export default class Logic extends EventEmitter {
   }
 
   async _execNode(ctx, curNode, lastRet) {
-    if (curNode.data.loop) {
-      ctx.setContext({ loop: true })
-    } else {
-      ctx.setContext({ loop: false })
-    }
+    curNode.data.loop && ctx.setContext({ loop: true });
     ctx._transitTo(curNode, lastRet);
     this._runLifecycleEvent('enterNode', ctx);
     const code = curNode.data.funcName ? inlineFn : config.nodeFns[curNode.id];
