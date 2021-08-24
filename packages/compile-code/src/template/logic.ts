@@ -141,6 +141,16 @@ export default class Logic extends EventEmitter {
 
   async _execNode(ctx, curNode, lastRet) {
     curNode.data.loop && ctx.setContext({ loop: true });
+
+    // 参数预处理
+    try {
+      const processCode = curNode.data.processCode;
+      const processCodeFn = vm.runInContext(\`module.exports = $\{processCode.replace('export default ', '')\}\`, this.sandbox);
+      lastRet = await processCodeFn(ctx.getPayload(), lastRet, ctx.getContext(), ctx.getConfig());
+    } catch (e) {
+      console.error('process input params error');
+    }
+
     ctx._transitTo(curNode, lastRet);
     this._runLifecycleEvent('enterNode', ctx);
     const code = curNode.data.funcName ? inlineFn : this.nodeFns[curNode.id];
