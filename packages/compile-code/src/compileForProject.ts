@@ -13,7 +13,7 @@ interface IOutput {
   'context.ts': string;
   'index.ts': string;
   'logic.ts': string;
-  'config.json': string;
+  'config.ts': string;
 }
 
 const compile = (dsl: DSL, plugins = []): IOutput => {
@@ -21,7 +21,7 @@ const compile = (dsl: DSL, plugins = []): IOutput => {
     'context.ts': contextTpl,
     'index.ts': addPlugins(indexTpl, plugins),
     'logic.ts': logicTpl,
-    'config.json': generateConfig(dsl),
+    'config.ts': generateConfig(dsl),
   };
   return output;
 };
