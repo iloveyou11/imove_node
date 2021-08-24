@@ -8,6 +8,7 @@ const pkg = require(path.join(__dirname, './package.json'));
 program
   .version(pkg.version)
   .option('-d, --dev', '本地开发')
+  .option('-e, --editor', '开启编辑器')
   .option('-i, --init', '初始化配置文件')
   .parse(process.argv);
 
