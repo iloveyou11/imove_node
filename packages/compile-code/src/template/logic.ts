@@ -134,6 +134,11 @@ export default class Logic extends EventEmitter {
   }
 
   async _execNode(ctx, curNode, lastRet) {
+    if (curNode.data.loop) {
+      ctx.setContext({ loop: true })
+    } else {
+      ctx.setContext({ loop: false })
+    }
     ctx._transitTo(curNode, lastRet);
     this._runLifecycleEvent('enterNode', ctx);
     const code = curNode.data.funcName ? inlineFn : config.nodeFns[curNode.id];
@@ -171,13 +176,15 @@ export default class Logic extends EventEmitter {
       providerType: curNode.data.providerType || '',
       inputMode: curNode.data.inputMode || '',
       outputMode: curNode.data.outputMode || '',
+      processCode: curNode.data.processCode || '',
+      loop: curNode.data.loop || false,
     });
     return this._execNode(this._unsafeCtx, curNode, undefined);
   }
 }
 
 const inlineFn = \`async function(ctx) {
-  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;
+  const { funcName, serviceId: id, outputMode, processCode } = ctx.curNode.data;
   const providerClass = await getProviderClazz(ctx);
   const params = assembleParams(ctx);
 

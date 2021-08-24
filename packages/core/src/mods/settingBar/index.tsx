@@ -43,9 +43,6 @@ const SettingBar: React.FC<IProps> = (props) => {
           <TabPane tab={'节点配置'} key={'basic'}>
             <Basic selectedCell={nodes[0]} flowChart={flowChart} />
           </TabPane>
-          {/* <TabPane tab={'测试用例'} key={'testCase'} forceRender>
-            <TestCase selectedCell={nodes[0]} flowChart={flowChart} />
-          </TabPane> */}
         </Tabs>
       </div>
     );

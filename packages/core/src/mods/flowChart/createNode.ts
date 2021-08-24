@@ -110,8 +110,18 @@ const createNode = (
       dependencies: '{\n  \n}',
       inputMode: 'default',
       outputMode: 'nopack',
+      processCode: `export default async function(
+  payload,
+  pipe,
+  context,
+  config
+) {
+  // you can write code here
+  return pipe;
+}`,
+      loop: false,
       code: `export default async function (ctx) {
-  const {funcName, serviceId: id, outputMode} = ctx.curNode.data;
+  const {funcName, serviceId: id, outputMode, processCode} = ctx.curNode.data;
   const providerClass = await getProviderClazz(ctx);
   const params = assembleParams(ctx);
 

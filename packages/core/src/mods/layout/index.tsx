@@ -1,14 +1,8 @@
 import React from 'react';
-
 import styles from './index.module.less';
-
 import { Graph } from '@antv/x6';
-
-// @ts-ignore
-import SplitPane from 'react-split-pane';
-// @ts-ignore
-import Pane from 'react-split-pane';
-
+import SplitPane from 'react-split-pane-v2';
+const Pane = SplitPane.Pane;
 interface ISubComponentProps {
   flowChart: Graph;
 }
@@ -49,9 +43,9 @@ const Layout: React.FC<IProps> = (props) => {
           {props.children}
           <Pane
             className={styles.settingBar}
-            minSize={'350px'}
+            minSize={'450px'}
             maxSize={'500px'}
-            initialSize={'350px'}
+            initialSize={'450px'}
           >
             {settingBar}
           </Pane>

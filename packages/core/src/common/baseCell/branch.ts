@@ -122,6 +122,16 @@ const schema = {
     code: 'export default async function(ctx) {\n  return true;\n}',
     inputMode: 'default',
     outputMode: 'nopack',
+    processCode: `export default async function(
+  payload,
+  pipe,
+  context,
+  config
+) {
+  // you can write code here
+  return pipe;
+}`,
+    loop: false,
   },
 };
 

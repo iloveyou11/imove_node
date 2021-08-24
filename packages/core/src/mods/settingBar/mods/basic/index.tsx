@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
 import styles from './index.module.less';
-
-import { Card, Select } from 'antd';
+import { Card, Select, Switch } from 'antd';
 import { Cell, Graph } from '@antv/x6';
 import Json from '../../components/json';
 import Input from '../../components/input';
+import CodeEditor from '../../../../components/codeEditor';
 
 const { Option } = Select;
 
@@ -21,13 +20,22 @@ interface IBasicData {
   configSchema: string;
   inputMode: string;
   outputMode: string;
+  processCode: string;
+  loop: boolean;
 }
 
 const Basic: React.FC<IProps> = (props) => {
   const { selectedCell, flowChart } = props;
   const [data, setData] = useState<IBasicData>(selectedCell.getData());
-  const { label, trigger, dependencies, configSchema, inputMode, outputMode } =
-    data || {};
+  const {
+    label,
+    trigger,
+    dependencies,
+    inputMode,
+    outputMode,
+    processCode,
+    loop,
+  } = data || {};
 
   // life
   useEffect(() => {
@@ -46,18 +54,18 @@ const Basic: React.FC<IProps> = (props) => {
     selectedCell.setData(newData);
     setData(Object.assign({}, data, newData));
   };
-  const commonChange = (key: string, val: string): void => {
+  const commonChange = (key: string, val: string | boolean): void => {
     batchUpdate({ [key]: val });
   };
   const onChangeLabel = (val: string): void => {
     commonChange('label', val);
     selectedCell.setAttrs({ label: { text: val } });
   };
-  const onChangeConfigSchema = (val: string): void => {
-    commonChange('configSchema', val);
-  };
   const onChangeTrigger = (val: string): void => {
     commonChange('trigger', val);
+  };
+  const onChangeLoop = (val: boolean): void => {
+    commonChange('loop', val);
   };
   const onChangeDependencies = (val: string): void => {
     commonChange('dependencies', val);
@@ -68,13 +76,16 @@ const Basic: React.FC<IProps> = (props) => {
   const onChangeOutputMode = (val: string): void => {
     commonChange('outputMode', val);
   };
+  const onChangeCode = (ev: any, val: string | undefined = ''): void => {
+    commonChange('processCode', val);
+  };
 
   return (
     <div className={styles.container}>
-      <Card title="名称">
+      <Card title="节点显示名称">
         <Input
           name={'label'}
-          title={'节点显示名称'}
+          title={''}
           value={label}
           onValueChange={onChangeLabel}
         />
@@ -89,6 +100,11 @@ const Basic: React.FC<IProps> = (props) => {
           </div>
         )}
       </Card>
+      {selectedCell.shape === 'imove-start' && (
+        <Card title="是否是循环流程">
+          <Switch checked={loop} onChange={onChangeLoop} />
+        </Card>
+      )}
       <Card title="入参模式">
         <Select
           className={styles.select}
@@ -117,14 +133,13 @@ const Basic: React.FC<IProps> = (props) => {
         isConfig={false}
         onValueChange={onChangeDependencies}
       />
-      {/* <Json
-        name={'configSchema'}
-        title={'投放配置'}
-        selectedCell={selectedCell}
-        value={configSchema}
-        isConfig={true}
-        onValueChange={onChangeConfigSchema}
-      /> */}
+      <h3 style={{ margin: 20 }}>入参预处理</h3>
+      <CodeEditor
+        value={processCode}
+        width={'100%'}
+        height={'200px'}
+        onChange={onChangeCode}
+      />
     </div>
   );
 };
