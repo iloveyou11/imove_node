@@ -1,5 +1,4 @@
-export default `import config from './config';
-import Context from './context';
+export default `import Context from './context';
 import * as vm from 'vm';
 const EventEmitter = require('events');
 
@@ -12,6 +11,7 @@ const SHAPES = {
 
 export default class Logic extends EventEmitter {
   private dsl;
+  private nodeFns;
   private lifeCycleEvents;
   private _unsafeCtx;
   private sandbox;
@@ -19,6 +19,7 @@ export default class Logic extends EventEmitter {
   constructor(opts = {}) {
     super();
     this.dsl = (opts as any).dsl;
+    this.nodeFns = (opts as any).nodeFns;
     this.lifeCycleEvents = {};
 
     this.sandbox = {
@@ -27,6 +28,11 @@ export default class Logic extends EventEmitter {
       module,
     };
     vm.createContext(this.sandbox);
+  }
+
+  updateConfig(config) {
+    this.dsl = config.dsl;
+    this.nodeFns = config.nodeFns;
   }
 
   get cells() {
@@ -137,7 +143,7 @@ export default class Logic extends EventEmitter {
     curNode.data.loop && ctx.setContext({ loop: true });
     ctx._transitTo(curNode, lastRet);
     this._runLifecycleEvent('enterNode', ctx);
-    const code = curNode.data.funcName ? inlineFn : config.nodeFns[curNode.id];
+    const code = curNode.data.funcName ? inlineFn : this.nodeFns[curNode.id];
 
     // replace 兼容
     const fn = vm.runInContext(\`module.exports = $\{code.replace('export default ', '')\}\`, this.sandbox);
