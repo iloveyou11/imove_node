@@ -133,13 +133,17 @@ const Basic: React.FC<IProps> = (props) => {
         isConfig={false}
         onValueChange={onChangeDependencies}
       />
-      <h3 style={{ margin: 20 }}>入参预处理</h3>
-      <CodeEditor
-        value={processCode}
-        width={'100%'}
-        height={'200px'}
-        onChange={onChangeCode}
-      />
+      {selectedCell.shape !== 'imove-start' && (
+        <>
+          <h3 style={{ margin: 20 }}>入参预处理</h3>
+          <CodeEditor
+            value={processCode}
+            width={'100%'}
+            height={'200px'}
+            onChange={onChangeCode}
+          />
+        </>
+      )}
     </div>
   );
 };
