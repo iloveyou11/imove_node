@@ -1,5 +1,4 @@
-export default `import config from './config';
-import Context from './context';
+export default `import Context from './context';
 import * as vm from 'vm';
 const EventEmitter = require('events');
 
@@ -12,6 +11,7 @@ const SHAPES = {
 
 export default class Logic extends EventEmitter {
   private dsl;
+  private nodeFns;
   private lifeCycleEvents;
   private _unsafeCtx;
   private sandbox;
@@ -19,6 +19,7 @@ export default class Logic extends EventEmitter {
   constructor(opts = {}) {
     super();
     this.dsl = (opts as any).dsl;
+    this.nodeFns = (opts as any).nodeFns;
     this.lifeCycleEvents = {};
 
     this.sandbox = {
@@ -27,6 +28,11 @@ export default class Logic extends EventEmitter {
       module,
     };
     vm.createContext(this.sandbox);
+  }
+
+  updateConfig(config) {
+    this.dsl = config.dsl;
+    this.nodeFns = config.nodeFns;
   }
 
   get cells() {
@@ -135,9 +141,19 @@ export default class Logic extends EventEmitter {
 
   async _execNode(ctx, curNode, lastRet) {
     curNode.data.loop && ctx.setContext({ loop: true });
+
+    // 参数预处理
+    try {
+      const processCode = curNode.data.processCode;
+      const processCodeFn = vm.runInContext(\`module.exports = $\{processCode.replace('export default ', '')\}\`, this.sandbox);
+      lastRet = await processCodeFn(ctx.getPayload(), lastRet, ctx.getContext(), ctx.getConfig());
+    } catch (e) {
+      console.error('process input params error');
+    }
+
     ctx._transitTo(curNode, lastRet);
     this._runLifecycleEvent('enterNode', ctx);
-    const code = curNode.data.funcName ? inlineFn : config.nodeFns[curNode.id];
+    const code = curNode.data.funcName ? inlineFn : this.nodeFns[curNode.id];
 
     // replace 兼容
     const fn = vm.runInContext(\`module.exports = $\{code.replace('export default ', '')\}\`, this.sandbox);
