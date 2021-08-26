@@ -1,10 +1,27 @@
 export default `import Logic from './logic';
-import config from './config';
-// import plugins here
+import { provide, scope, ScopeEnum, init, inject } from '@ali/midway';
 
-const logic = new Logic({dsl: config.dsl, nodeFns: config.nodeFns});
+@scope(ScopeEnum.Singleton)
+@provide()
+export class LogicManager {
+  private logic: Logic;
 
-// use plugins here
+  @inject('imoveOssManager')
+  private imoveOssManager: any;
 
-export default logic;
+  @init()
+  public async init() {
+    const config = await this.imoveOssManager.read('/admin/config.json');
+    const {dsl, nodeFns} = JSON.parse(config);
+    this.logic = new Logic({dsl, nodeFns});
+  }
+
+  public async update(config) {
+    return this.logic.updateConfig(config);
+  }
+
+  public async invoke(code, params) {
+    return this.logic.invoke(code, params);
+  }
+}
 `;
