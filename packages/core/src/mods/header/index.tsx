@@ -7,7 +7,8 @@ import { Modal, message } from 'antd';
 import Guide from './guide';
 import Export from './export';
 import ImportDSL from './importDSL';
-import ImportNodes from './ImportNodes';
+import ImportNodes from './importNodes';
+import Publish from './publish';
 import ConnectStatus, { Status } from './connectStatus';
 import Configuration from './configuration';
 import { localConnect } from '../../api';
@@ -99,6 +100,7 @@ const Header: React.FC<IProps> = (props: IProps) => {
         <Export flowChart={flowChart} />
         <ImportDSL flowChart={flowChart} />
         <ImportNodes />
+        <Publish flowChart={flowChart}  />
         <ConnectStatus
           status={status}
           projectName={projectName}

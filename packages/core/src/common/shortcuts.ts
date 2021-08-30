@@ -14,7 +14,7 @@ const shortcuts: { [key: string]: Shortcut } = {
   save: {
     keys: 'meta + s',
     handler(flowChart: Graph) {
-      localSave({ dsl: flowChart.toJSON() });
+      localSave(flowChart.toJSON());
       return false;
     },
   },
