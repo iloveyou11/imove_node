@@ -94,12 +94,12 @@ export const localConnect = () => {
 
 export const localSave = async (data: any) => {
   // 同步到本地db.json
-  // const localConfig = getLocalConfig();
-  // fetch(`http://${localConfig.ip}:${localConfig.port}/api/save`, {
-  //   method: 'POST',
-  //   headers: { 'content-type': 'application/json' },
-  //   body: JSON.stringify(data),
-  // });
+  const localConfig = getLocalConfig();
+  fetch(`http://${localConfig.ip}:${localConfig.port}/api/save`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(data),
+  });
 
   // 同步到新的后端接口，整个config对象作为body
   const nodeFns: any = {};
