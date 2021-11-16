@@ -1,5 +1,5 @@
 import { safeGet } from '../utils';
-// import { localSave } from '../api';
+import { localSave } from '../api';
 import { message } from 'antd';
 import { Cell, Edge, Graph, Node } from '@antv/x6';
 import { MIN_ZOOM, MAX_ZOOM, ZOOM_STEP } from './const';
@@ -14,7 +14,7 @@ const shortcuts: { [key: string]: Shortcut } = {
   save: {
     keys: 'meta + s',
     handler(flowChart: Graph) {
-      // localSave(flowChart.toJSON());
+      localSave(flowChart.toJSON());
       return false;
     },
   },
