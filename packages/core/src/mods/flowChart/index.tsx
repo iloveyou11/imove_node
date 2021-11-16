@@ -90,7 +90,14 @@ const FlowChart: React.FC<IProps> = (props) => {
     queryGraph(projectId as string)
       .then((res) => {
         const { data: dsl } = res;
-        flowChart.fromJSON(dsl);
+        document.dispatchEvent(
+          new CustomEvent('register', {
+            detail: {
+              dsl,
+              flowChart,
+            },
+          }),
+        );
       })
       .catch((error) => {
         console.log('query graph data failed, the error is:', error);

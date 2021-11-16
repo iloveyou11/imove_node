@@ -42,6 +42,62 @@ document.addEventListener(
   false,
 );
 
+document.addEventListener(
+  'register',
+  function (evt: any) {
+    const dsl = evt.detail.dsl;
+    const flowChart = evt.detail.flowChart;
+    try {
+      // 先注册节点，否则会同步失败
+      const extendCell: any = {};
+      dsl.cells.forEach((item: any) => {
+        if (
+          item.shape !== 'imove-start' &&
+          item.shape !== 'imove-branch' &&
+          item.shape !== 'edge'
+        ) {
+          const {
+            serviceId,
+            label,
+            domain,
+            funcName,
+            provider,
+            providerType,
+          } = item.data;
+          console.log({
+            serviceId,
+            label,
+            domain,
+            funcName,
+            provider,
+            providerType,
+          });
+
+          extendCell[item.shape] = createNode(
+            serviceId,
+            label,
+            domain,
+            funcName,
+            provider,
+            providerType,
+          );
+        }
+      });
+      const nodes = Object.values(extendCell);
+      if (nodes.length > 0) {
+        nodes.forEach((schema: any) => {
+          const { base, ...rest } = schema;
+          base.define(rest);
+        });
+      }
+      flowChart.fromJSON(dsl);
+    } catch (error) {
+      // message.error('同步失败！');
+    }
+  },
+  false,
+);
+
 const registerEvents = (flowChart: Graph): void => {
   flowChart.on('node:added', (args) => {
     flowChart.cleanSelection();

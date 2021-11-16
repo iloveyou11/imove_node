@@ -84,46 +84,46 @@ export const updateLocalConfig = (config: ILocalConfig) => {
   localStorage.setItem(LOCAL_CONFIG_KEY, JSON.stringify(savedConfig));
 };
 
-export const localConnect = () => {
-  const localConfig = getLocalConfig();
-  return fetch(`http://${localConfig.ip}:${localConfig.port}/api/connect`, {
-    method: 'GET',
-    headers: { 'content-type': 'application/json' },
-  });
-};
+// export const localConnect = () => {
+//   const localConfig = getLocalConfig();
+//   return fetch(`http://${localConfig.ip}:${localConfig.port}/api/connect`, {
+//     method: 'GET',
+//     headers: { 'content-type': 'application/json' },
+//   });
+// };
 
-export const localSave = async (data: any) => {
-  // 同步到本地db.json
-  const localConfig = getLocalConfig();
-  fetch(`http://${localConfig.ip}:${localConfig.port}/api/save`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(data),
-  });
+// export const localSave = async (data: any) => {
+//   // 同步到本地db.json
+//   const localConfig = getLocalConfig();
+//   fetch(`http://${localConfig.ip}:${localConfig.port}/api/save`, {
+//     method: 'POST',
+//     headers: { 'content-type': 'application/json' },
+//     body: JSON.stringify({ dsl: data }),
+//   });
 
-  // 同步到新的后端接口，整个config对象作为body
-  const nodeFns: any = {};
-  const cells = data.cells;
-  cells.forEach((cell: any) => {
-    if (cell.shape !== 'edge') {
-      nodeFns[cell.id] = cell.data?.processCode || '';
-    }
-  });
-  const result = {
-    nodeFns,
-    dsl: cells,
-  };
-  const res: any = await axios.post('/web/api/dynamic/admin/save', result);
-  if (res.success) {
-    console.log('编排内容保存成功！');
-  } else {
-    console.log('编排内容保存失败，请重试！');
-  }
-};
+//   // 同步到新的后端接口，整个config对象作为body
+//   const nodeFns: any = {};
+//   const cells = data.cells;
+//   cells.forEach((cell: any) => {
+//     if (cell.shape !== 'edge') {
+//       nodeFns[cell.id] = cell.data?.processCode || '';
+//     }
+//   });
+//   const result = {
+//     nodeFns,
+//     dsl: cells,
+//   };
+//   const res: any = await axios.post('/web/api/dynamic/admin/save', result);
+//   if (res.success) {
+//     console.log('编排内容保存成功！');
+//   } else {
+//     console.log('编排内容保存失败，请重试！');
+//   }
+// };
 
 export const queryGraph = async (projectId: string) => {
   const result: any = await axios.post('/web/api/dynamic/admin/load');
-  const { success, data } = result;
+  const { success, data } = result.data;
   if (success) {
     const { dsl } = data;
     console.log('加载数据成功！');
