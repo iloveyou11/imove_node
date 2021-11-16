@@ -59,8 +59,8 @@ class Dev extends Base {
 
   run() {
     const app = createServer(DEFAULT_PORT);
-    app.post('/api/save', this.save.bind(this));
-    app.get('/api/connect', this.connect.bind(this));
+    // app.post('/api/save', this.save.bind(this));
+    // app.get('/api/connect', this.connect.bind(this));
   }
 }
 
