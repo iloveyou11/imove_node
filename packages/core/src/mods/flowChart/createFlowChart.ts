@@ -45,8 +45,8 @@ document.addEventListener(
 document.addEventListener(
   'register',
   function (evt: any) {
-    const dsl = evt.detail.dsl;
-    const flowChart = evt.detail.flowChart;
+    const dsl = evt.detail?.dsl;
+    const flowChart = evt.detail?.flowChart;
     try {
       // 先注册节点，否则会同步失败
       const extendCell: any = {};
@@ -64,15 +64,6 @@ document.addEventListener(
             provider,
             providerType,
           } = item.data;
-          console.log({
-            serviceId,
-            label,
-            domain,
-            funcName,
-            provider,
-            providerType,
-          });
-
           extendCell[item.shape] = createNode(
             serviceId,
             label,
