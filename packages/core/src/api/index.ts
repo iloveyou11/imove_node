@@ -123,7 +123,7 @@ export const localSave = async (data: any) => {
 
 export const queryGraph = async (projectId: string) => {
   const result: any = await axios.post('/web/api/dynamic/admin/load');
-  const { success, data } = result;
+  const { success, data } = result.data;
   if (success) {
     const { dsl } = data;
     console.log('加载数据成功！');
