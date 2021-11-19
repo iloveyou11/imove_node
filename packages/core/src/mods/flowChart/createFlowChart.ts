@@ -32,8 +32,12 @@ document.addEventListener(
         );
       });
       Object.values(extendCell).forEach((schema) => {
-        const { base, ...rest } = schema;
-        base.define(rest);
+        try {
+          const { base, ...rest } = schema;
+          base.define(rest);
+        } catch (error) {
+          console.log('error');
+        }
       });
     } catch (err) {
       console.log(err);
