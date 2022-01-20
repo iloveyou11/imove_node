@@ -24,7 +24,7 @@ const Publish: React.FC<IProps> = (props) => {
         nodeFns[cell.id] = cell.data?.processCode || '';
       }
     });
-    const res: any = await axios.post(`/web/api/dynamic/admin/publish/${env}`, {
+    const res: any = await axios.post(`/web/api/admin/dynamic/publish/${env}`, {
       nodeFns,
       dsl: cells,
     });

@@ -113,7 +113,7 @@ export const localSave = async (data: any) => {
     nodeFns,
     dsl: cells,
   };
-  const res: any = await axios.post('/web/api/dynamic/admin/save', result);
+  const res: any = await axios.post('/web/api/admin/dynamic/save', result);
   if (res.success) {
     console.log('编排内容保存成功！');
   } else {
@@ -122,7 +122,7 @@ export const localSave = async (data: any) => {
 };
 
 export const queryGraph = async (projectId: string) => {
-  const result: any = await axios.post('/web/api/dynamic/admin/load');
+  const result: any = await axios.post('/web/api/admin/dynamic/load');
   const { success, data } = result.data;
   if (success) {
     const { dsl } = data;
